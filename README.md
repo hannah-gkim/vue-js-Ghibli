@@ -18,4 +18,3 @@ Using Vue.js created the following functionality:
 - HTML
 - CSS
 - Javascript
-# vue-js-Ghibli
