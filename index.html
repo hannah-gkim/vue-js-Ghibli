@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ghibli App</title>
+  </head>
+  <body>
+    <div class="main" id="app">
+      <div class="main__container">
+        <!----------------------- title ------------------------>
+        <div class="logoImage__container">
+          <img class="logo__image" src="/logo.png" />
+        </div>
+
+        <!----------------------- filters----------------------->
+        <div class="search-bar">
+          <input
+            class="input"
+            size="30"
+            type="search"
+            v-model="search"
+            placeholder="Search title..."
+          />
+          <select class="select" v-on:change="filterByDirector">
+            <option value="all">all</option>
+            <!-- <option
+                  v-for="singleMovie in movies"
+                  v-bind:value="singleMovie.director"
+                >
+                  {{singleMovie.director}}
+                </option> -->
+            <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+            <option value="Isao Takahata">Isao Takahata</option>
+            <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+            <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+            <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+            <option value="Michaël Dudok de Wit">Michaël Dudok de Wit</option>
+          </select>
+        </div>
+        <break></break>
+
+        <!------------------------ small device ------------------------>
+        <!-- style="display: none" -->
+        <section class="forSmall__device" v-for="singleMovie in paginatedData">
+          <div class="smallDevice__container">
+            <img
+              v-bind:src="singleMovie.image"
+              alt=""
+              class="moive__image__small"
+            />
+
+            <div class="small__title">{{ singleMovie.title }}</div>
+            <p class="small__director">by {{ singleMovie.director }}</p>
+
+            <div class="description">{{ singleMovie.description }}</div>
+          </div>
+        </section>
+        <!------------------------ table ------------------------>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Director</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="singleMovie in paginatedData" :key="singleMovie.source">
+              <td>
+                <img
+                  v-bind:src="singleMovie.image"
+                  alt=""
+                  class="moive__image"
+                />
+                <!-- <img
+                  v-bind:src="singleMovie.image"
+                  width="100px"
+                  height="130px"
+                  alt=""
+                /> -->
+              </td>
+              <td>{{ singleMovie.title }}</td>
+              <td class="description">{{ singleMovie.description }}</td>
+              <td>{{ singleMovie.director }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <!---------------------- pagination ---------------------->
+        <div class="pagination">
+          <button @click="prevPage">Previous</button>
+          <div class="pageNum">{{currentPage}}</div>
+          <button @click="nextPage">Next</button>
+        </div>
+      </div>
+      <!---------------------- main_container ends --------------->
+    </div>
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

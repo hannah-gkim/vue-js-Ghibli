@@ -1,0 +1,240 @@
+html {
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+  color: #666;
+  background: #f6f6f6;
+}
+.moive__image {
+  width: 100px;
+  height: auto;
+}
+.logo__image {
+  width: 350px;
+  padding-bottom: 1.5rem;
+}
+.logoImage__container {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+.main {
+  margin: 4rem 4em;
+  margin-bottom: 3rem;
+}
+.main__container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  /* border: solid 2px red; */
+}
+break {
+  flex-basis: 100%;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  /* border: solid orange 3px; */
+}
+.search-bar {
+  min-width: 400px;
+  margin: 0 40px;
+  padding-bottom: 0.5rem;
+  text-align: right;
+  /* border: orchid 3px solid; */
+  width: 80%;
+}
+.table {
+  /* border: palegreen 3px solid; */
+
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 40px;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+}
+.description {
+  text-align: start;
+}
+
+.table thead tr {
+  /* background-color: rgb(255, 122, 144); */
+  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1.5rem 2.5rem;
+}
+.table th,
+.table td {
+  padding: 15px 30px;
+}
+.table tbody tr {
+  border-bottom: 1px solid #d3d1d1;
+}
+.table tbody tr:nth-of-type(even) {
+  background-color: #fdf7fc;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f5f8fd;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 4px solid #fbc2eb;
+}
+.pagination {
+  display: flex;
+  min-width: 400px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.pageNum {
+  padding: 0 1rem;
+  font-size: 2rem;
+  color: #a6c1ee;
+}
+.input {
+  display: inline-block;
+  padding: 15px 10px;
+  line-height: 140%;
+}
+
+.select {
+  padding: 15px 10px;
+}
+/* phone */
+@media screen and (max-width: 767px) {
+  .table {
+    display: none;
+  }
+  .main {
+    margin: 1.5rem 1.5em;
+    /* border: 3px black solid; */
+    min-width: 100px;
+    margin-bottom: 3rem;
+    
+  }
+  .forSmall__device {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    /* width: 100%; */
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-image: linear-gradient(120deg, #ffdcf5 0%, #d1ddf0 100%);
+
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
+  }
+  .smallDevice__container {
+    justify-content: center;
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .input {
+    display: inline-block;
+    padding: 7px 7px;
+    line-height: 140%;
+  }
+
+  .select {
+    padding: 7px 7px;
+    width: 230px;
+  }
+  .search-bar {
+    max-width: 100px;
+    width: 100%;
+    padding: 1rem 1rem;
+    text-align: center;
+  }
+
+  .moive__image__small {
+    min-width: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .small__title {
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .small__director {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .pagination {
+    max-width: 200px;
+  }
+  .pageNum {
+    font-size: 20px;
+  }
+  .logo__image {
+    min-width: 40px;
+    margin-bottom: 0.5rem;
+  }
+}
+/* ipad */
+@media screen and (min-width: 768px) {
+  .forSmall__device {
+    display: none;
+  }
+  .table {
+    min-width: 700px;
+    font-size: 0.8rem;
+  }
+  .table thead tr {
+    font-size: 0.8rem;
+  }
+  .title {
+    min-width: 700px;
+  }
+  .search-bar {
+    min-width: 700px;
+  }
+  .pagination {
+    min-width: 700px;
+  }
+  .moive__image {
+    width: 100px;
+    height: auto;
+  }
+  .logo__image {
+    width: 330px;
+  }
+}
+/* computer */
+@media screen and (min-width: 1024px) {
+  .forSmall__device {
+    display: none;
+  }
+  .moive__image {
+    width: 150px;
+    height: auto;
+  }
+  .logo__image {
+    width: 400px;
+  }
+  .table {
+    min-width: 850px;
+    font-size: 1.3rem;
+  }
+  .table thead tr {
+    font-size: 1.3rem;
+  }
+  .title {
+    min-width: 850px;
+  }
+  .search-bar {
+    min-width: 850px;
+  }
+  .pagination {
+    min-width: 850px;
+  }
+}
