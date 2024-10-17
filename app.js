@@ -12,7 +12,7 @@ const app = Vue.createApp({
   //created hook can be used to run code after an instance is created:
   created: async function () {
     try {
-      const res = await fetch("https://ghibliapi.herokuapp.com/films");
+      const res = await fetch("https://ghibliapi.dev/films");
       const data = await res.json();
       this.movies = data;
       console.log(this.movies[0].image);
